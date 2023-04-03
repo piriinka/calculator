@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous"/>
+    <title>Calculator</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h3 class="w-100 text-center">Simple Calculator</h3>
+
+            <form class="form-inline justife-content-center border">
+                <input type="text" id="nr1" class="form-control" placeholder="number">
+                <select id="op" class="custom-select">
+                    <option >+</option>
+                    <option >-</option>
+                    <option >/</option>
+                    <option >*</option>
+                </select>
+                <input type="text" id="nr2" class="form-control m-2" placeholder="number">
+                <input type="button" value="=" class="btn btn-primary" onclick="calc()">
+                <input type="text" id="result" class="form-control m-2" disabled>
+
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function calc(){
+            let nr1=+document.getElementById("nr1").value
+            let nr2=+document.getElementById("nr2").value
+            let op=document.getElementById("op").value
+            console.log(nr1,op,nr2)
+            if(!nr1 || !nr2) return
+            document.getElementById("result").value=eval(nr1+op+nr2)
+        }
+    </script>
+</body>
+</html>
